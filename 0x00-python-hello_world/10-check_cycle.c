@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
-*check_cycle - function that checks for a cycle in a linked list
-*@list: pointer to the linked list in question
-*Return: 0 on success, 1 on failure
-*/
+ *check_cycle - function that checks for a cycle in a linked list
+ *list: pointer to the linked list in question
+ *Return: 0 on success, 1 on failure
+ */
 
 int check_cycle(listint_t *list)
 {
