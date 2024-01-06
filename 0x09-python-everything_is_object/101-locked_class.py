@@ -4,3 +4,4 @@
 
 class LockedClass():
     """ variables """
+    __slots__ = ('first_name')
