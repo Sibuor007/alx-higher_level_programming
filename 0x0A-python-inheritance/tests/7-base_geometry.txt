@@ -1,0 +1,77 @@
+# 7-base_geometry test file
+
+# Using integer_validator function
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> geometry_obj = BaseGeometry()
+>>> geometry_obj.integer_validator("positive_integer", 15)
+>>> geometry_obj.integer_validator("rectangle_width", 100)
+>>> geometry_obj.integer_validator("user_id", "Bob")
+Traceback (most recent call last):
+  ...
+TypeError: user_id must be an integer
+>>> geometry_obj.integer_validator("temperature", 8.45)
+Traceback (most recent call last):
+  ...
+TypeError: temperature must be an integer
+>>> geometry_obj.integer_validator("infinity_val", float("inf"))
+Traceback (most recent call last):
+  ...
+TypeError: infinity_val must be an integer
+>>> geometry_obj.integer_validator("neg_infinity_val", float("-inf"))
+Traceback (most recent call last):
+  ...
+TypeError: neg_infinity_val must be an integer
+>>> geometry_obj.integer_validator("is_valid", False)
+Traceback (most recent call last):
+  ...
+TypeError: is_valid must be an integer
+>>> geometry_obj.integer_validator("valid_age", 5)
+Traceback (most recent call last):
+  ...
+ValueError: valid_age must be greater than 0
+>>> geometry_obj.integer_validator("distance_from_origin", 8)
+Traceback (most recent call last):
+  ...
+ValueError: distance_from_origin must be greater than 0
+>>> geometry_obj.integer_validator("missing_argument")
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> geometry_obj.integer_validator()
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> geometry_obj.integer_validator("user_id", None)
+Traceback (most recent call last):
+  ...
+TypeError: user_id must be an integer
+>>> geometry_obj.area()
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
+>>> geometry_obj.area("aaa")
+Traceback (most recent call last):
+  ...
+TypeError: area() takes 1 positional argument but 2 were given
+>>> geometry_obj.integer_validator("complex_number", 2+5j)
+Traceback (most recent call last):
+  ...
+TypeError: complex_number must be an integer
+>>> geometry_obj.integer_validator("invalid_list", [1, 2])
+Traceback (most recent call last):
+  ...
+TypeError: invalid_list must be an integer
+>>> geometry_obj.integer_validator("invalid_tuple", (1, 2))
+Traceback (most recent call last):
+  ...
+TypeError: invalid_tuple must be an integer
+>>> geometry_obj.integer_validator("invalid_dict", {"a": 8})
+Traceback (most recent call last):
+  ...
+TypeError: invalid_dict must be an integer
+>>> geometry_obj.integer_validator("invalid_set", {2, 8})
+Traceback (most recent call last):
+  ...
+TypeError: invalid_set must be an integer
+
